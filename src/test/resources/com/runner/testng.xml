@@ -5,10 +5,15 @@
 		<listener class-name="org.uncommons.reportng.HTMLReporter"></listener>
 		<listener class-name="org.uncommons.reportng.JUnitXMLReporter"></listener>
 		<listener class-name="listeners.CustomListeners"></listener>
-	</listeners>
+	</listeners>	
   <test thread-count="5" name="LoginTest">
     <classes>
       <class name="testcases.LoginTest"/>
+    </classes>
+  </test> <!-- Test -->
+  <test thread-count="5" name="AccountTest">
+    <classes>
+      <class name="testcases.AccountTest"/>
     </classes>
   </test> <!-- Test -->
   

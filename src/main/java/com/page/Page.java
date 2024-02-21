@@ -20,6 +20,8 @@ import org.testng.annotations.BeforeSuite;
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.Status;
 import com.base.TopMenu;
+import com.pages.LandingPage;
+import com.pages.SignInPage;
 
 import listeners.CustomListeners;
 import utilities.ExcelReader;
@@ -42,6 +44,9 @@ public class Page {
     public static ExcelReader excel = new ExcelReader("\\src\\test\\resources\\com\\excel\\testdatasheet.xlsx"); 
     public static MonitoringMail mail = new MonitoringMail();
     public static String browser;
+    public static SignInPage signin;
+	public static LandingPage lp;
+	
     @BeforeSuite
 	public void SetupPage() throws IOException{
     	if(driver == null) {
