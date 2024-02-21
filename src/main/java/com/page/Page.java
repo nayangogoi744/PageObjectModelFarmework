@@ -106,34 +106,44 @@ public class Page {
 		driver.quit();
 	}
 	
-	public static void click(String locator) {
-		if(locator.endsWith("_XPATH")) {
-			driver.findElement(By.xpath(element.getProperty(locator))).click();
-		}else if(locator.endsWith("_CSS")){
-			driver.findElement(By.cssSelector(element.getProperty(locator))).click();
-		}else if(locator.endsWith("_ID")) {
-			driver.findElement(By.id(element.getProperty(locator))).click();
-		}
-		
-		log.info("Clicking on " +locator);
-		//test.info("Clicking on " +locator);
-		CustomListeners.test.log(Status.INFO, "Clicking on " +locator);
+    public static void click(WebElement link) {
+		link.click();
 	}
+    public static void type(WebElement link,String value) {
+		link.sendKeys(value);
+	}
+    
+    public static void clear(WebElement link) {
+		link.clear();
+	}
+//	public static void click(String locator) {
+//		if(locator.endsWith("_XPATH")) {
+//			driver.findElement(By.xpath(element.getProperty(locator))).click();
+//		}else if(locator.endsWith("_CSS")){
+//			driver.findElement(By.cssSelector(element.getProperty(locator))).click();
+//		}else if(locator.endsWith("_ID")) {
+//			driver.findElement(By.id(element.getProperty(locator))).click();
+//		}
+//		
+//		log.info("Clicking on " +locator);
+//		//test.info("Clicking on " +locator);
+//		CustomListeners.test.log(Status.INFO, "Clicking on " +locator);
+//	}
 	
-	public static void type(String locator,String value) {
-		if(locator.endsWith("_XPATH")) {
-			driver.findElement(By.xpath(element.getProperty(locator))).sendKeys(value);
-		}else if(locator.endsWith("_CSS")){
-			driver.findElement(By.cssSelector(element.getProperty(locator))).sendKeys(value);
-		}else if(locator.endsWith("_ID")) {
-			driver.findElement(By.id(element.getProperty(locator))).sendKeys(value);
-		}
-		
-		
-		log.info("Typying " +value+ " in " +locator);
-		//test.info("Typying " +value+ " in " +locator);
-		CustomListeners.test.log(Status.INFO, "Typying " +value+ " in " +locator);
-	}
+//	public static void type(String locator,String value) {
+//		if(locator.endsWith("_XPATH")) {
+//			driver.findElement(By.xpath(element.getProperty(locator))).sendKeys(value);
+//		}else if(locator.endsWith("_CSS")){
+//			driver.findElement(By.cssSelector(element.getProperty(locator))).sendKeys(value);
+//		}else if(locator.endsWith("_ID")) {
+//			driver.findElement(By.id(element.getProperty(locator))).sendKeys(value);
+//		}
+//		
+//		
+//		log.info("Typying " +value+ " in " +locator);
+//		//test.info("Typying " +value+ " in " +locator);
+//		CustomListeners.test.log(Status.INFO, "Typying " +value+ " in " +locator);
+//	}
 	
 	public static void select(String locator, String value) {
 		WebElement dropbox = null;

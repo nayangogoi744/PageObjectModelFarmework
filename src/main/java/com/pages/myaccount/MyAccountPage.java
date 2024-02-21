@@ -20,12 +20,14 @@ public class MyAccountPage extends Page{
 	}
 	
 	public EditAccountPage editContactInfo() {
-		editLink.click();
+		//editLink.click();
+		click(editLink);
 		return new EditAccountPage();
 	}
 	
 	public ChangePasswordPage clickchangePassword() {
-		chngPass.click();
+		//chngPass.click();
+		click(chngPass);
 		return new ChangePasswordPage();	
 	}
 	

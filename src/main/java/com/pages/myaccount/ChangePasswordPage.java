@@ -27,10 +27,14 @@ public class ChangePasswordPage extends Page{
 		PageFactory.initElements(driver, this);
 	}
 	public SignInPage changePassword(String currentpass,String newpass) {
-		currentPass.sendKeys(currentpass);
-		newPass.sendKeys(newpass);
-		confirmPass.sendKeys(newpass);
-		saveBtn.click();
+		//currentPass.sendKeys(currentpass);
+		type(currentPass, currentpass);
+		//newPass.sendKeys(newpass);
+		type(newPass,newpass);
+		//confirmPass.sendKeys(newpass);
+		type(confirmPass,newpass);
+		//saveBtn.click();
+		click(saveBtn);
 		return new SignInPage();
 		
 	}

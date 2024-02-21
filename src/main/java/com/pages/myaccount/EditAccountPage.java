@@ -19,9 +19,12 @@ public class EditAccountPage extends Page{
 		PageFactory.initElements(driver, this);
 	}
 	public MyAccountPage changeAccInfo(String name) {
-		firstname.clear();
-		firstname.sendKeys(name);
-		saveBtn.click();
+		//firstname.clear();
+		clear(firstname);
+		//firstname.sendKeys(name);
+		type(firstname, name);
+		//saveBtn.click();
+		click(saveBtn);
 		return new MyAccountPage();
 	}
 }

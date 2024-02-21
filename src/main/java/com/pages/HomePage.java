@@ -22,13 +22,15 @@ public class HomePage extends Page{
 	}
 	
 	public SignInPage goToSignInPage() {
-		singInLink.click();
-		//topmenu.goToWomenSection();
+		//singInLink.click();
+		click(singInLink);
 		return new SignInPage();
 	}
 	
+	
 	public MyAccountPage goToCreateAccountPage() {
-		createAccLink.click();
+		//createAccLink.click();
+		click(createAccLink);
 		return new MyAccountPage();
 	}
 	

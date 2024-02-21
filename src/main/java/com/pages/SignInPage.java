@@ -1,6 +1,5 @@
 package com.pages;
 
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -30,18 +29,23 @@ public class SignInPage extends Page{
 		PageFactory.initElements(driver, this);
 	}
 	public LandingPage performSignIn(String email,String password) {
-		emailField.sendKeys(email);
-		pass.sendKeys(password);
-		send2.click();
+		//emailField.sendKeys(email);
+		type(emailField, email);
+		//pass.sendKeys(password);
+		type(pass, password);
+		//send2.click();
+		click(send2);
 		return new LandingPage();
 	}
 	
 	public void goToForgotPassword() {
-		forgotPass.click();
+		//forgotPass.click();
+		click(forgotPass);
 	}
 	
 	public CreateNewAccountPage createAnAccount() {
-		createAcc.click();
+		//createAcc.click();
+		click(createAcc);
 		return new CreateNewAccountPage();
 	}
 }

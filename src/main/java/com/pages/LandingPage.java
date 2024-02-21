@@ -1,6 +1,5 @@
 package com.pages;
 
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -49,8 +48,10 @@ public class LandingPage extends Page{
 	}
 	
 	public MyAccountPage goToMyAccount() {
-		myAccDropDown.click();
-		menu.click();
+		//myAccDropDown.click();
+		click(myAccDropDown);
+		//menu.click();
+		click(menu);
 		return new MyAccountPage();
 		
 	}
