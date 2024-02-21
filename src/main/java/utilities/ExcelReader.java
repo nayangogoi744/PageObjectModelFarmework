@@ -19,7 +19,9 @@ public class ExcelReader {
 	}
 	public static int getRowCount(String sheetname) throws IOException {
 		int row = 0;
+		System.out.println("Before");
 		FileInputStream fis = new FileInputStream(new File(System.getProperty("user.dir")+"\\"+filepath));
+		System.out.println("After");
 		XSSFWorkbook wb = new XSSFWorkbook(fis);
 		XSSFSheet sheet = wb.getSheet(sheetname);
 		Iterator<Row> itr = sheet.rowIterator();

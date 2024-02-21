@@ -39,14 +39,14 @@ public class Page {
 	public static Logger log = LogManager.getLogger();
 
     public static ExtentReports extent = ExtentManager.getInstance(); 
-    public static ExcelReader excel = new ExcelReader("\\src\\main\\resources\\testdata.xlsx"); 
+    public static ExcelReader excel = new ExcelReader("\\src\\test\\resources\\com\\excel\\testdatasheet.xlsx"); 
     public static MonitoringMail mail = new MonitoringMail();
     public static String browser;
     @BeforeSuite
 	public void SetupPage() throws IOException{
     	if(driver == null) {
-			fis = new FileInputStream(System.getProperty("user.dir")+"\\src\\main\\resources\\config.properties");
-			ele = new FileInputStream(System.getProperty("user.dir")+"\\src\\main\\resources\\elements.properties");
+			fis = new FileInputStream(System.getProperty("user.dir")+"\\src\\test\\resources\\com\\properties\\config.properties");
+			ele = new FileInputStream(System.getProperty("user.dir")+"\\src\\test\\resources\\com\\properties\\elements.properties");
 			prop.load(fis);
 			element.load(ele);
 	
