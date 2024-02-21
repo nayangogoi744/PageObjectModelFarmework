@@ -109,17 +109,17 @@ public class Page {
 	
     public static void click(WebElement link) {
 		link.click();
-		CustomListeners.test.log(Status.INFO, "Clicked "+link);
+		CustomListeners.test.log(Status.INFO, "Clicked the link");
 		
 	}
     public static void type(WebElement link,String value) {
 		link.sendKeys(value);
-		CustomListeners.test.log(Status.INFO, "Typed "+value+" in" +link);
+		CustomListeners.test.log(Status.INFO, "Typed "+value+" in the textbox");
 	}
     
     public static void clear(WebElement link) {
 		link.clear();
-		CustomListeners.test.log(Status.INFO, "Clear "+link);
+		CustomListeners.test.log(Status.INFO, "Clear the textbox");
 	}
 //	public static void click(String locator) {
 //		if(locator.endsWith("_XPATH")) {
