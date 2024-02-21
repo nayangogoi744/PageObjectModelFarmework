@@ -16,6 +16,7 @@ import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeSuite;
+import org.testng.annotations.Test;
 
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.Status;
@@ -108,13 +109,17 @@ public class Page {
 	
     public static void click(WebElement link) {
 		link.click();
+		CustomListeners.test.log(Status.INFO, "Clicked "+link);
+		
 	}
     public static void type(WebElement link,String value) {
 		link.sendKeys(value);
+		CustomListeners.test.log(Status.INFO, "Typed "+value+" in" +link);
 	}
     
     public static void clear(WebElement link) {
 		link.clear();
+		CustomListeners.test.log(Status.INFO, "Clear "+link);
 	}
 //	public static void click(String locator) {
 //		if(locator.endsWith("_XPATH")) {
@@ -145,23 +150,23 @@ public class Page {
 //		CustomListeners.test.log(Status.INFO, "Typying " +value+ " in " +locator);
 //	}
 	
-	public static void select(String locator, String value) {
-		WebElement dropbox = null;
-		if(locator.endsWith("_XPATH")) {
-			dropbox = driver.findElement(By.xpath(element.getProperty(locator)));
-		}else if(locator.endsWith("_CSS")){
-			dropbox =  driver.findElement(By.cssSelector(element.getProperty(locator)));
-		}else if(locator.endsWith("_ID")) {
-			dropbox =  driver.findElement(By.id(element.getProperty(locator)));
-		}
-		
-		Select se = new Select(dropbox);
-		se.selectByVisibleText(value);
-		log.info("Selected " +value+ " in " +locator);
-		//test.info("Selected " +value+ " in " +locator);
-		CustomListeners.test.log(Status.INFO,"Selected " +value+ " in " +locator);
-	}
-	
+//	public static void select(String locator, String value) {
+//		WebElement dropbox = null;
+//		if(locator.endsWith("_XPATH")) {
+//			dropbox = driver.findElement(By.xpath(element.getProperty(locator)));
+//		}else if(locator.endsWith("_CSS")){
+//			dropbox =  driver.findElement(By.cssSelector(element.getProperty(locator)));
+//		}else if(locator.endsWith("_ID")) {
+//			dropbox =  driver.findElement(By.id(element.getProperty(locator)));
+//		}
+//		
+//		Select se = new Select(dropbox);
+//		se.selectByVisibleText(value);
+//		log.info("Selected " +value+ " in " +locator);
+//		//test.info("Selected " +value+ " in " +locator);
+//		CustomListeners.test.log(Status.INFO,"Selected " +value+ " in " +locator);
+//	}
+//	
 	public static boolean isElementPresent(String locator) {
 
 		try {
